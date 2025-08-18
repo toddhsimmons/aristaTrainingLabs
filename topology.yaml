@@ -1,14 +1,15 @@
+name: sample
 prefix: ""
 
-mgmt:
-  network: mgmt
-  ipv4-subnet: 172.100.100.0/24
+# mgmt:
+#   network: mgmt
+#   ipv4-subnet: 172.100.100.0/24
 
 topology:
 
-  defaults:
-    env:
-      INTFTYPE: et
+  # defaults:
+  #   env:
+  #     INTFTYPE: et
 
   kinds:
     ceos:
@@ -37,39 +38,39 @@ topology:
 
     A-SPINE1:
       kind: ceos
-      mgmt-ipv4: 172.100.100.101
+      # mgmt-ipv4: 172.100.100.101
       # startup-config: ../configs/A-SPINE1.cfg
-      ports:
-        - '22001:22'
-        - '8001:80'
-        - '44301:443'
+      # ports:
+      #   - '22001:22'
+      #   - '8001:80'
+      #   - '44301:443'
 
     A-SPINE2:
       kind: ceos
-      mgmt-ipv4: 172.100.100.102
+      # mgmt-ipv4: 172.100.100.102
       # startup-config: ../configs/A-SPINE2.cfg
-      ports:
-        - '22002:22'
-        - '8002:80'
-        - '44302:443'
+      # ports:
+      #   - '22002:22'
+      #   - '8002:80'
+      #   - '44302:443'
 
-    A-SPINE3:
-      kind: ceos
-      mgmt-ipv4: 172.100.100.103
+    # A-SPINE3:
+    #   kind: ceos
+      # mgmt-ipv4: 172.100.100.103
       # startup-config: ../configs/A-SPINE3.cfg
-      ports:
-        - '22003:22'
-        - '8003:80'
-        - '44303:443'
+      # ports:
+      #   - '22003:22'
+      #   - '8003:80'
+      #   - '44303:443'
 
-    A-SPINE4:
-      kind: ceos
-      mgmt-ipv4: 172.100.100.104
+    # A-SPINE4:
+    #   kind: ceos
+      # mgmt-ipv4: 172.100.100.104
       # startup-config: ../configs/A-SPINE4.cfg
-      ports:
-        - '22004:22'
-        - '8004:80'
-        - '44304:443'
+      # ports:
+      #   - '22004:22'
+      #   - '8004:80'
+      #   - '44304:443'
 
 #########################
 # DC "A" LEAF           #
@@ -77,75 +78,75 @@ topology:
 
     A-LEAF1:
       kind: ceos
-      mgmt-ipv4: 172.100.100.105
+      # mgmt-ipv4: 172.100.100.105
       # startup-config: ../configs/A-LEAF1.cfg
-      ports:
-        - '22005:22'
-        - '8005:80'
-        - '44305:443'
+      # ports:
+      #   - '22005:22'
+      #   - '8005:80'
+      #   - '44305:443'
 
     A-LEAF2:
       kind: ceos
-      mgmt-ipv4: 172.100.100.106
+      # mgmt-ipv4: 172.100.100.106
       # startup-config: ../configs/A-LEAF2.cfg
-      ports:
-        - '22006:22'
-        - '8006:80'
-        - '44306:443'
+      # ports:
+      #   - '22006:22'
+      #   - '8006:80'
+      #   - '44306:443'
 
     A-LEAF3:
       kind: ceos
-      mgmt-ipv4: 172.100.100.107
+      # mgmt-ipv4: 172.100.100.107
       # startup-config: ../configs/A-LEAF3.cfg
-      ports:
-        - '22007:22'
-        - '8007:80'
-        - '44307:443'
+      # ports:
+      #   - '22007:22'
+      #   - '8007:80'
+      #   - '44307:443'
 
     A-LEAF4:
       kind: ceos
-      mgmt-ipv4: 172.100.100.108
+      # mgmt-ipv4: 172.100.100.108
       # startup-config: ../configs/A-LEAF4.cfg
-      ports:
-        - '22008:22'
-        - '8008:80'
-        - '44308:443'
+      # ports:
+      #   - '22008:22'
+      #   - '8008:80'
+      #   - '44308:443'
 
-    A-LEAF5:
-      kind: ceos
-      mgmt-ipv4: 172.100.100.109
+    # A-LEAF5:
+    #   kind: ceos
+    #   mgmt-ipv4: 172.100.100.109
       # startup-config: ../configs/A-LEAF5.cfg
-      ports:
-        - '22009:22'
-        - '8009:80'
-        - '44309:443'
+      # ports:
+      #   - '22009:22'
+      #   - '8009:80'
+      #   - '44309:443'
 
-    A-LEAF6:
-      kind: ceos
-      mgmt-ipv4: 172.100.100.110
+    # A-LEAF6:
+    #   kind: ceos
+    #   mgmt-ipv4: 172.100.100.110
       # startup-config: ../configs/A-LEAF6.cfg
-      ports:
-        - '22010:22'
-        - '8010:80'
-        - '44310:443'
+      # ports:
+      #   - '22010:22'
+      #   - '8010:80'
+      #   - '44310:443'
 
-    A-LEAF7:
-      kind: ceos
-      mgmt-ipv4: 172.100.100.111
+    # A-LEAF7:
+    #   kind: ceos
+    #   mgmt-ipv4: 172.100.100.111
       # startup-config: ../configs/A-LEAF7.cfg
-      ports:
-        - '22011:22'
-        - '8011:80'
-        - '44311:443'
+      # ports:
+      #   - '22011:22'
+      #   - '8011:80'
+      #   - '44311:443'
 
-    A-LEAF8:
-      kind: ceos
-      mgmt-ipv4: 172.100.100.112
+    # A-LEAF8:
+    #   kind: ceos
+    #   mgmt-ipv4: 172.100.100.112
       # startup-config: ../configs/A-LEAF8.cfg
-      ports:
-        - '22012:22'
-        - '8012:80'
-        - '44312:443'
+      # ports:
+      #   - '22012:22'
+      #   - '8012:80'
+      #   - '44312:443'
 
 
   links:
@@ -156,10 +157,10 @@ topology:
     - endpoints: ["A-SPINE1:et2", "A-LEAF2:et1"]
     - endpoints: ["A-SPINE1:et3", "A-LEAF3:et1"]
     - endpoints: ["A-SPINE1:et4", "A-LEAF4:et1"]
-    - endpoints: ["A-SPINE1:et5", "A-LEAF5:et1"]
-    - endpoints: ["A-SPINE1:et6", "A-LEAF6:et1"]
-    - endpoints: ["A-SPINE1:et7", "A-LEAF7:et1"]
-    - endpoints: ["A-SPINE1:et8", "A-LEAF8:et1"]
+    # - endpoints: ["A-SPINE1:et5", "A-LEAF5:et1"]
+    # - endpoints: ["A-SPINE1:et6", "A-LEAF6:et1"]
+    # - endpoints: ["A-SPINE1:et7", "A-LEAF7:et1"]
+    # - endpoints: ["A-SPINE1:et8", "A-LEAF8:et1"]
 ######################
 # A-SPINE2 to LEAF   #
 ######################
@@ -167,32 +168,32 @@ topology:
     - endpoints: ["A-SPINE2:et2", "A-LEAF2:et2"]
     - endpoints: ["A-SPINE2:et3", "A-LEAF3:et2"]
     - endpoints: ["A-SPINE2:et4", "A-LEAF4:et2"]
-    - endpoints: ["A-SPINE2:et5", "A-LEAF5:et2"]
-    - endpoints: ["A-SPINE2:et6", "A-LEAF6:et2"]
-    - endpoints: ["A-SPINE2:et7", "A-LEAF7:et2"]
-    - endpoints: ["A-SPINE2:et8", "A-LEAF8:et2"]
+    # - endpoints: ["A-SPINE2:et5", "A-LEAF5:et2"]
+    # - endpoints: ["A-SPINE2:et6", "A-LEAF6:et2"]
+    # - endpoints: ["A-SPINE2:et7", "A-LEAF7:et2"]
+    # - endpoints: ["A-SPINE2:et8", "A-LEAF8:et2"]
 ######################
 # A-SPINE3 to LEAF   #
 ######################
-    - endpoints: ["A-SPINE3:et1", "A-LEAF1:et3"]
-    - endpoints: ["A-SPINE3:et2", "A-LEAF2:et3"]
-    - endpoints: ["A-SPINE3:et3", "A-LEAF3:et3"]
-    - endpoints: ["A-SPINE3:et4", "A-LEAF4:et3"]
-    - endpoints: ["A-SPINE3:et5", "A-LEAF5:et3"]
-    - endpoints: ["A-SPINE3:et6", "A-LEAF6:et3"]
-    - endpoints: ["A-SPINE3:et7", "A-LEAF7:et3"]
-    - endpoints: ["A-SPINE3:et8", "A-LEAF8:et3"]
+    # - endpoints: ["A-SPINE3:et1", "A-LEAF1:et3"]
+    # - endpoints: ["A-SPINE3:et2", "A-LEAF2:et3"]
+    # - endpoints: ["A-SPINE3:et3", "A-LEAF3:et3"]
+    # - endpoints: ["A-SPINE3:et4", "A-LEAF4:et3"]
+    # - endpoints: ["A-SPINE3:et5", "A-LEAF5:et3"]
+    # - endpoints: ["A-SPINE3:et6", "A-LEAF6:et3"]
+    # - endpoints: ["A-SPINE3:et7", "A-LEAF7:et3"]
+    # - endpoints: ["A-SPINE3:et8", "A-LEAF8:et3"]
 ######################
 # A-SPINE4 to LEAF   #
 ######################
-    - endpoints: ["A-SPINE4:et1", "A-LEAF1:et4"]
-    - endpoints: ["A-SPINE4:et2", "A-LEAF2:et4"]
-    - endpoints: ["A-SPINE4:et3", "A-LEAF3:et4"]
-    - endpoints: ["A-SPINE4:et4", "A-LEAF4:et4"]
-    - endpoints: ["A-SPINE4:et5", "A-LEAF5:et4"]
-    - endpoints: ["A-SPINE4:et6", "A-LEAF6:et4"]
-    - endpoints: ["A-SPINE4:et7", "A-LEAF7:et4"]
-    - endpoints: ["A-SPINE4:et8", "A-LEAF8:et4"]
+    # - endpoints: ["A-SPINE4:et1", "A-LEAF1:et4"]
+    # - endpoints: ["A-SPINE4:et2", "A-LEAF2:et4"]
+    # - endpoints: ["A-SPINE4:et3", "A-LEAF3:et4"]
+    # - endpoints: ["A-SPINE4:et4", "A-LEAF4:et4"]
+    # - endpoints: ["A-SPINE4:et5", "A-LEAF5:et4"]
+    # - endpoints: ["A-SPINE4:et6", "A-LEAF6:et4"]
+    # - endpoints: ["A-SPINE4:et7", "A-LEAF7:et4"]
+    # - endpoints: ["A-SPINE4:et8", "A-LEAF8:et4"]
 ########################
 # A-LEAF1 to A-LEAF2   #
 ########################
@@ -206,11 +207,11 @@ topology:
 ########################
 # A-LEAF5 to A-LEAF6   #
 ########################
-    - endpoints: ["A-LEAF5:et5", "A-LEAF6:et5"]
-    - endpoints: ["A-LEAF5:et6", "A-LEAF6:et6"]
+    # - endpoints: ["A-LEAF5:et5", "A-LEAF6:et5"]
+    # - endpoints: ["A-LEAF5:et6", "A-LEAF6:et6"]
 ########################
 # A-LEAF7 to A-LEAF8   #
 ########################
-    - endpoints: ["A-LEAF7:et5", "A-LEAF8:et5"]
-    - endpoints: ["A-LEAF7:et6", "A-LEAF8:et6"]
+    # - endpoints: ["A-LEAF7:et5", "A-LEAF8:et5"]
+    # - endpoints: ["A-LEAF7:et6", "A-LEAF8:et6"]
 ########################
