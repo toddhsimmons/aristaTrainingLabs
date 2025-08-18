@@ -1,10 +1,6 @@
 name: firstLab
 prefix: ""
 
-mgmt:
-  network: mgmt
-  ipv4-subnet: 172.100.100.0/24
-
 topology:
 
   defaults:
@@ -15,8 +11,6 @@ topology:
     ceos:
       image: ceos:4.30.1F
       memory: 4g
-    # linux:
-    #   image: mitchv85/devhost
 
   nodes:
 ###############################################################
@@ -33,185 +27,120 @@ topology:
 
 
 #########################
-# DC "A" SPINE          #
+#       SPINES          #
 #########################
 
-    A-SPINE1:
+    SPINE1:
       kind: ceos
-      mgmt-ipv4: 172.100.100.101
-      # startup-config: ../configs/A-SPINE1.cfg
-      ports:
-        - '22001:22'
-        - '8001:80'
-        - '44301:443'
 
-    A-SPINE2:
+    SPINE2:
       kind: ceos
-      mgmt-ipv4: 172.100.100.102
-      # startup-config: ../configs/A-SPINE2.cfg
-      ports:
-        - '22002:22'
-        - '8002:80'
-        - '44302:443'
 
-    # A-SPINE3:
-    #   kind: ceos
-      # mgmt-ipv4: 172.100.100.103
-      # startup-config: ../configs/A-SPINE3.cfg
-      # ports:
-      #   - '22003:22'
-      #   - '8003:80'
-      #   - '44303:443'
+    SPINE3:
+      kind: ceos
 
-    # A-SPINE4:
-    #   kind: ceos
-      # mgmt-ipv4: 172.100.100.104
-      # startup-config: ../configs/A-SPINE4.cfg
-      # ports:
-      #   - '22004:22'
-      #   - '8004:80'
-      #   - '44304:443'
+    SPINE4:
+      kind: ceos
+
 
 #########################
-# DC "A" LEAF           #
+#       LEAFS           #
 #########################
 
-    A-LEAF1:
+    LEAF1:
       kind: ceos
-      mgmt-ipv4: 172.100.100.105
-      # startup-config: ../configs/A-LEAF1.cfg
-      ports:
-        - '22005:22'
-        - '8005:80'
-        - '44305:443'
 
-    A-LEAF2:
+    LEAF2:
       kind: ceos
-      mgmt-ipv4: 172.100.100.106
-      # startup-config: ../configs/A-LEAF2.cfg
-      ports:
-        - '22006:22'
-        - '8006:80'
-        - '44306:443'
 
-    A-LEAF3:
+    LEAF3:
       kind: ceos
-      mgmt-ipv4: 172.100.100.107
-      # startup-config: ../configs/A-LEAF3.cfg
-      ports:
-        - '22007:22'
-        - '8007:80'
-        - '44307:443'
 
-    A-LEAF4:
+    LEAF4:
       kind: ceos
-      mgmt-ipv4: 172.100.100.108
-      # startup-config: ../configs/A-LEAF4.cfg
-      ports:
-        - '22008:22'
-        - '8008:80'
-        - '44308:443'
 
-    # A-LEAF5:
-    #   kind: ceos
-      # mgmt-ipv4: 172.100.100.109
-      # startup-config: ../configs/A-LEAF5.cfg
-      # ports:
-      #   - '22009:22'
-      #   - '8009:80'
-      #   - '44309:443'
+#########################
+#       HOSTS           #
+#########################
 
-    # A-LEAF6:
-    #   kind: ceos
-    #   mgmt-ipv4: 172.100.100.110
-      # startup-config: ../configs/A-LEAF6.cfg
-      # ports:
-      #   - '22010:22'
-      #   - '8010:80'
-      #   - '44310:443'
+    HOST1:
+      kind: ceos
 
-    # A-LEAF7:
-    #   kind: ceos
-    #   mgmt-ipv4: 172.100.100.111
-      # startup-config: ../configs/A-LEAF7.cfg
-      # ports:
-      #   - '22011:22'
-      #   - '8011:80'
-      #   - '44311:443'
+    HOST2: 
+      kind: ceos
 
-    # A-LEAF8:
-    #   kind: ceos
-    #   mgmt-ipv4: 172.100.100.112
-      # startup-config: ../configs/A-LEAF8.cfg
-      # ports:
-      #   - '22012:22'
-      #   - '8012:80'
-      #   - '44312:443'
+    HOST3:
+      kind: ceos
+
+    HOST4:
+      kind: ceos
 
 
   links:
 ######################
-# A-SPINE1 to LEAF   #
+#   SPINE1 to LEAF   #
 ######################
-    - endpoints: ["A-SPINE1:et1", "A-LEAF1:et1"]
-    - endpoints: ["A-SPINE1:et2", "A-LEAF2:et1"]
-    - endpoints: ["A-SPINE1:et3", "A-LEAF3:et1"]
-    - endpoints: ["A-SPINE1:et4", "A-LEAF4:et1"]
-    # - endpoints: ["A-SPINE1:et5", "A-LEAF5:et1"]
-    # - endpoints: ["A-SPINE1:et6", "A-LEAF6:et1"]
-    # - endpoints: ["A-SPINE1:et7", "A-LEAF7:et1"]
-    # - endpoints: ["A-SPINE1:et8", "A-LEAF8:et1"]
+    - endpoints: ["SPINE1:et1", "LEAF1:et1"]
+    - endpoints: ["SPINE1:et2", "LEAF2:et1"]
+    - endpoints: ["SPINE1:et3", "LEAF3:et1"]
+    - endpoints: ["SPINE1:et4", "LEAF4:et1"]
+
 ######################
-# A-SPINE2 to LEAF   #
+#   SPINE2 to LEAF   #
 ######################
-    - endpoints: ["A-SPINE2:et1", "A-LEAF1:et2"]
-    - endpoints: ["A-SPINE2:et2", "A-LEAF2:et2"]
-    - endpoints: ["A-SPINE2:et3", "A-LEAF3:et2"]
-    - endpoints: ["A-SPINE2:et4", "A-LEAF4:et2"]
-    # - endpoints: ["A-SPINE2:et5", "A-LEAF5:et2"]
-    # - endpoints: ["A-SPINE2:et6", "A-LEAF6:et2"]
-    # - endpoints: ["A-SPINE2:et7", "A-LEAF7:et2"]
-    # - endpoints: ["A-SPINE2:et8", "A-LEAF8:et2"]
+    - endpoints: ["SPINE2:et1", "LEAF1:et2"]
+    - endpoints: ["SPINE2:et2", "LEAF2:et2"]
+    - endpoints: ["SPINE2:et3", "LEAF3:et2"]
+    - endpoints: ["SPINE2:et4", "LEAF4:et2"]
+
 ######################
-# A-SPINE3 to LEAF   #
+#   SPINE3 to LEAF   #
 ######################
-    # - endpoints: ["A-SPINE3:et1", "A-LEAF1:et3"]
-    # - endpoints: ["A-SPINE3:et2", "A-LEAF2:et3"]
-    # - endpoints: ["A-SPINE3:et3", "A-LEAF3:et3"]
-    # - endpoints: ["A-SPINE3:et4", "A-LEAF4:et3"]
-    # - endpoints: ["A-SPINE3:et5", "A-LEAF5:et3"]
-    # - endpoints: ["A-SPINE3:et6", "A-LEAF6:et3"]
-    # - endpoints: ["A-SPINE3:et7", "A-LEAF7:et3"]
-    # - endpoints: ["A-SPINE3:et8", "A-LEAF8:et3"]
+    - endpoints: ["SPINE3:et1", "LEAF1:et3"]
+    - endpoints: ["SPINE3:et2", "LEAF2:et3"]
+    - endpoints: ["SPINE3:et3", "LEAF3:et3"]
+    - endpoints: ["SPINE3:et4", "LEAF4:et3"]
+
 ######################
-# A-SPINE4 to LEAF   #
+#   SPINE4 to LEAF   #
 ######################
-    # - endpoints: ["A-SPINE4:et1", "A-LEAF1:et4"]
-    # - endpoints: ["A-SPINE4:et2", "A-LEAF2:et4"]
-    # - endpoints: ["A-SPINE4:et3", "A-LEAF3:et4"]
-    # - endpoints: ["A-SPINE4:et4", "A-LEAF4:et4"]
-    # - endpoints: ["A-SPINE4:et5", "A-LEAF5:et4"]
-    # - endpoints: ["A-SPINE4:et6", "A-LEAF6:et4"]
-    # - endpoints: ["A-SPINE4:et7", "A-LEAF7:et4"]
-    # - endpoints: ["A-SPINE4:et8", "A-LEAF8:et4"]
+    - endpoints: ["SPINE4:et1", "LEAF1:et4"]
+    - endpoints: ["SPINE4:et2", "LEAF2:et4"]
+    - endpoints: ["SPINE4:et3", "LEAF3:et4"]
+    - endpoints: ["SPINE4:et4", "LEAF4:et4"]
+
 ########################
-# A-LEAF1 to A-LEAF2   #
+# LEAF1 to LEAF2   #
 ########################
-    - endpoints: ["A-LEAF1:et5", "A-LEAF2:et5"]
-    - endpoints: ["A-LEAF1:et6", "A-LEAF2:et6"]
+    - endpoints: ["LEAF1:et5", "LEAF2:et5"]
+    - endpoints: ["LEAF1:et6", "LEAF2:et6"]
+
 ########################
-# A-LEAF3 to A-LEAF4   #
+# LEAF3 to LEAF4   #
 ########################
-    - endpoints: ["A-LEAF3:et5", "A-LEAF4:et5"]
-    - endpoints: ["A-LEAF3:et6", "A-LEAF4:et6"]
-########################
-# A-LEAF5 to A-LEAF6   #
-########################
-    # - endpoints: ["A-LEAF5:et5", "A-LEAF6:et5"]
-    # - endpoints: ["A-LEAF5:et6", "A-LEAF6:et6"]
-########################
-# A-LEAF7 to A-LEAF8   #
-########################
-    # - endpoints: ["A-LEAF7:et5", "A-LEAF8:et5"]
-    # - endpoints: ["A-LEAF7:et6", "A-LEAF8:et6"]
-########################
+    - endpoints: ["LEAF3:et5", "LEAF4:et5"]
+    - endpoints: ["LEAF3:et6", "LEAF4:et6"]
+
+######################
+#   LEAF1 to HOSTS   #
+######################
+    - endpoints: ["LEAF1:et7", "HOST1:et1"]
+    - endpoints: ["LEAF1:et8", "HOST2:et1"]
+
+######################
+#   LEAF2 to HOSTS   #
+######################
+    - endpoints: ["LEAF2:et7", "HOST1:et2"]
+    - endpoints: ["LEAF2:et8", "HOST2:et2"]
+
+######################
+#   LEAF3 to HOSTS   #
+######################
+    - endpoints: ["LEAF3:et7", "HOST3:et1"]
+    - endpoints: ["LEAF3:et8", "HOST4:et1"]
+
+######################
+#   LEAF4 to HOSTS   #
+######################
+    - endpoints: ["LEAF4:et7", "HOST3:et2"]
+    - endpoints: ["LEAF4:et8", "HOST4:et2"]
