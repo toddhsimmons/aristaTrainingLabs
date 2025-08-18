@@ -7,9 +7,9 @@ prefix: ""
 
 topology:
 
-  # defaults:
-  #   env:
-  #     INTFTYPE: et
+  defaults:
+    env:
+      INTFTYPE: et
 
   kinds:
     ceos:
