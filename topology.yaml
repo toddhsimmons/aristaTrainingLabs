@@ -2,29 +2,12 @@ name: firstLab
 prefix: ""
 
 topology:
-
-  defaults:
-    env:
-      INTFTYPE: et
-
   kinds:
     ceos:
       image: ceos:4.30.1F
       memory: 4g
 
   nodes:
-###############################################################
-###############################################################
-###############################################################
-###############################################################
-###############################################################
-#                     DOMAIN "A"                         #
-###############################################################
-###############################################################
-###############################################################
-###############################################################
-###############################################################
-
 
 #########################
 #       SPINES          #
@@ -80,67 +63,67 @@ topology:
 ######################
 #   SPINE1 to LEAF   #
 ######################
-    - endpoints: ["SPINE1:et1", "LEAF1:et1"]
-    - endpoints: ["SPINE1:et2", "LEAF2:et1"]
-    - endpoints: ["SPINE1:et3", "LEAF3:et1"]
-    - endpoints: ["SPINE1:et4", "LEAF4:et1"]
+    - endpoints: ["SPINE1:eth1", "LEAF1:eth1"]
+    - endpoints: ["SPINE1:eth2", "LEAF2:eth1"]
+    - endpoints: ["SPINE1:eth3", "LEAF3:eth1"]
+    - endpoints: ["SPINE1:eth4", "LEAF4:eth1"]
 
 ######################
 #   SPINE2 to LEAF   #
 ######################
-    - endpoints: ["SPINE2:et1", "LEAF1:et2"]
-    - endpoints: ["SPINE2:et2", "LEAF2:et2"]
-    - endpoints: ["SPINE2:et3", "LEAF3:et2"]
-    - endpoints: ["SPINE2:et4", "LEAF4:et2"]
+    - endpoints: ["SPINE2:eth1", "LEAF1:eth2"]
+    - endpoints: ["SPINE2:eth2", "LEAF2:eth2"]
+    - endpoints: ["SPINE2:eth3", "LEAF3:eth2"]
+    - endpoints: ["SPINE2:eth4", "LEAF4:eth2"]
 
 ######################
 #   SPINE3 to LEAF   #
 ######################
-    - endpoints: ["SPINE3:et1", "LEAF1:et3"]
-    - endpoints: ["SPINE3:et2", "LEAF2:et3"]
-    - endpoints: ["SPINE3:et3", "LEAF3:et3"]
-    - endpoints: ["SPINE3:et4", "LEAF4:et3"]
+    - endpoints: ["SPINE3:eth1", "LEAF1:eth3"]
+    - endpoints: ["SPINE3:eth2", "LEAF2:eth3"]
+    - endpoints: ["SPINE3:eth3", "LEAF3:eth3"]
+    - endpoints: ["SPINE3:eth4", "LEAF4:eth3"]
 
 ######################
 #   SPINE4 to LEAF   #
 ######################
-    - endpoints: ["SPINE4:et1", "LEAF1:et4"]
-    - endpoints: ["SPINE4:et2", "LEAF2:et4"]
-    - endpoints: ["SPINE4:et3", "LEAF3:et4"]
-    - endpoints: ["SPINE4:et4", "LEAF4:et4"]
+    - endpoints: ["SPINE4:eth1", "LEAF1:eth4"]
+    - endpoints: ["SPINE4:eth2", "LEAF2:eth4"]
+    - endpoints: ["SPINE4:eth3", "LEAF3:eth4"]
+    - endpoints: ["SPINE4:eth4", "LEAF4:eth4"]
 
 ########################
 # LEAF1 to LEAF2   #
 ########################
-    - endpoints: ["LEAF1:et5", "LEAF2:et5"]
-    - endpoints: ["LEAF1:et6", "LEAF2:et6"]
+    - endpoints: ["LEAF1:eth5", "LEAF2:eth5"]
+    - endpoints: ["LEAF1:eth6", "LEAF2:eth6"]
 
 ########################
 # LEAF3 to LEAF4   #
 ########################
-    - endpoints: ["LEAF3:et5", "LEAF4:et5"]
-    - endpoints: ["LEAF3:et6", "LEAF4:et6"]
+    - endpoints: ["LEAF3:eth5", "LEAF4:eth5"]
+    - endpoints: ["LEAF3:eth6", "LEAF4:eth6"]
 
 ######################
 #   LEAF1 to HOSTS   #
 ######################
-    - endpoints: ["LEAF1:et7", "HOST1:et1"]
-    - endpoints: ["LEAF1:et8", "HOST2:et1"]
+    - endpoints: ["LEAF1:eth7", "HOST1:eth1"]
+    - endpoints: ["LEAF1:eth8", "HOST2:eth1"]
 
 ######################
 #   LEAF2 to HOSTS   #
 ######################
-    - endpoints: ["LEAF2:et7", "HOST1:et2"]
-    - endpoints: ["LEAF2:et8", "HOST2:et2"]
+    - endpoints: ["LEAF2:eth7", "HOST1:eth2"]
+    - endpoints: ["LEAF2:eth8", "HOST2:eth2"]
 
 ######################
 #   LEAF3 to HOSTS   #
 ######################
-    - endpoints: ["LEAF3:et7", "HOST3:et1"]
-    - endpoints: ["LEAF3:et8", "HOST4:et1"]
+    - endpoints: ["LEAF3:eth7", "HOST3:eth1"]
+    - endpoints: ["LEAF3:eth8", "HOST4:eth1"]
 
 ######################
 #   LEAF4 to HOSTS   #
 ######################
-    - endpoints: ["LEAF4:et7", "HOST3:et2"]
-    - endpoints: ["LEAF4:et8", "HOST4:et2"]
+    - endpoints: ["LEAF4:eth7", "HOST3:eth2"]
+    - endpoints: ["LEAF4:eth8", "HOST4:eth2"]
