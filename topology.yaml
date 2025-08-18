@@ -56,21 +56,21 @@ topology:
 
     # A-SPINE3:
     #   kind: ceos
-      mgmt-ipv4: 172.100.100.103
+      # mgmt-ipv4: 172.100.100.103
       # startup-config: ../configs/A-SPINE3.cfg
-      ports:
-        - '22003:22'
-        - '8003:80'
-        - '44303:443'
+      # ports:
+      #   - '22003:22'
+      #   - '8003:80'
+      #   - '44303:443'
 
     # A-SPINE4:
     #   kind: ceos
-      mgmt-ipv4: 172.100.100.104
+      # mgmt-ipv4: 172.100.100.104
       # startup-config: ../configs/A-SPINE4.cfg
-      ports:
-        - '22004:22'
-        - '8004:80'
-        - '44304:443'
+      # ports:
+      #   - '22004:22'
+      #   - '8004:80'
+      #   - '44304:443'
 
 #########################
 # DC "A" LEAF           #
@@ -114,12 +114,12 @@ topology:
 
     # A-LEAF5:
     #   kind: ceos
-      mgmt-ipv4: 172.100.100.109
+      # mgmt-ipv4: 172.100.100.109
       # startup-config: ../configs/A-LEAF5.cfg
-      ports:
-        - '22009:22'
-        - '8009:80'
-        - '44309:443'
+      # ports:
+      #   - '22009:22'
+      #   - '8009:80'
+      #   - '44309:443'
 
     # A-LEAF6:
     #   kind: ceos
