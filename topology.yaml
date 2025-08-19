@@ -157,7 +157,7 @@ topology:
 ######################
 #   SPINE to SPINE   #
 ######################
-    - endpoints: ["SPINE1-DC1:eth1", "SPINE1-DC1:eth1"]
+    - endpoints: ["SPINE1-DC1:eth1", "SPINE2-DC1:eth1"]
 
 
 ######################
@@ -238,7 +238,7 @@ topology:
 ######################
 #   SPINE to SPINE   #
 ######################
-    - endpoints: ["SPINE1-DC2:eth1", "SPINE1-DC2:eth1"]
+    - endpoints: ["SPINE1-DC2:eth1", "SPINE2-DC2:eth1"]
 
 ######################
 #   SPINE1 to LEAF   #
